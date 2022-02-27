@@ -1,11 +1,14 @@
 ---
 setup: |
   import Layout from '../../layouts/BlogPost.astro';
+  import nails from '../../assets/img/nails.jpeg';
 publishDate: 01.01.12
 title: Future
 description: Accusamus sed aut et. Repudiandae autem voluptatibus saepe aut ea. Voluptatum tempora voluptates dolores et autem laborum. Laudantium sequi temporibus ab et nulla laboriosam sit. Optio quam autem ea eos quia velit.
 
 ---
+
+<img src={nails} />
 
 Neque voluptas dolor velit. Totam sint sint explicabo. Rem rem ut placeat.
 
