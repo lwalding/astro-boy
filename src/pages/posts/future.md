@@ -3,12 +3,9 @@ setup: |
   import Layout from '../../layouts/BlogPost.astro';
 publishDate: 01.01.12
 title: Future
-img: '../../assets/img/nails.jpeg'
 description: Accusamus sed aut et. Repudiandae autem voluptatibus saepe aut ea. Voluptatum tempora voluptates dolores et autem laborum. Laudantium sequi temporibus ab et nulla laboriosam sit. Optio quam autem ea eos quia velit.
 
 ---
-
-![Nine Inch Nails](/assets/img/nails.jpeg)
 
 Neque voluptas dolor velit. Totam sint sint explicabo. Rem rem ut placeat.
 
