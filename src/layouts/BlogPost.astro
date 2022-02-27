@@ -1,0 +1,30 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import BlogNav from '../components/BlogNav.astro';
+import BlogPost from '../components/BlogPost.astro';
+
+const { content } = Astro.props;
+const { title, description, publishDate, permalink, alt } = content;
+---
+
+<html lang={content.lang || 'en'}>
+	<head>
+		<BaseHead {title} {description} {permalink} />
+
+			<style global>
+			@import "../styles/global.css";
+			</style>
+
+	</head>
+
+	<body class="bg-zinc-900 text-zinc-300 tracking-wider font-light">
+
+	<div class="container flex flex-col max-w-screen-md mx-auto mb-8">
+		<BlogNav />
+			<BlogPost {title} {publishDate} {alt}>
+				<slot />
+			</BlogPost>
+	</div>
+
+</body>
+</html>

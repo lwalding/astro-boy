@@ -1,0 +1,65 @@
+---
+// Component imports
+
+import BaseHead from '../components/BaseHead.astro';
+import Synths from '../components/Synths.astro';
+import BlogPostPreview from '../components/BlogPostPreview.astro';
+
+interface MarkdownFrontmatter {
+	publishDate: number;
+}
+
+let title = 'Luke Walding';
+let permalink = 'https://lukewalding.org/';
+
+// Data fetching: list all Markdown posts in the repo.
+
+let allPosts = await Astro.fetchContent('./posts/*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
+
+
+---
+
+<html lang="en">
+<head>
+<BaseHead {title} {permalink} />
+
+<style global>
+@import "../styles/global.css";
+</style>
+
+</head>
+
+<body class="bg-zinc-900 text-zinc-300 tracking-wider font-light">
+
+<div class="container flex flex-col h-screen max-w-screen-md mx-auto mb-8">
+	<section class="flex justify-between py-8">
+		<div class="flex space-x-4">
+			<div class="text-sm text-zinc-400">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+					<path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+				</svg>
+			</div>
+		</div>
+		<div class="text-sm text-zinc-400">
+			<a class="pb-1 border-b border-zinc-200/25 hover:border-zinc-200/75 hover:transition duration-200" href="https://twitter.com/watkinspye">@watkinspye</a>
+		</div>
+	</section>
+
+	<h1 class="text-2xl text-zinc-100 mx-auto pt-12">luke walding</h1>
+	<h2 class="text-6xl text-amber-100 mx-auto pb-8">synth thinking</h2>
+
+	<div class="grid md:grid-cols-3 md:gap-8 md:grid-cols-1 flex-grow">
+		<div class="md:col-span-3 md:col-span-1">
+			<section class="mt-8 prose max-w-max">
+				<p>{allPosts.map((p) => <BlogPostPreview post={p} />)}</p>
+			</section>
+		</div>
+	</div>
+
+	<Synths />
+
+</div>
+
+</body>
+</html>

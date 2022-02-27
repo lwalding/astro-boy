@@ -1,0 +1,15 @@
+---
+export interface Props {
+	post: any;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="py-8 border-b border-zinc-800 last-of-type:border-b last-of-type:border-b-zinc-600" >
+	<header class="mb-4">
+		<a href={post.url}><h1 class="text-xl text-sky-200 mb-2 font-light">{post.title}</h1></a>
+	</header>
+	<p class="text-zinc-300 mb-8 text-base">{post.description}</p>
+	<p class="text-xs text-zinc-300 rounded-md py-1 px-2 ring-1 ring-zinc-600 max-w-fit">{post.publishDate}</p>
+</article>

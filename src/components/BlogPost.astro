@@ -1,0 +1,21 @@
+---
+export interface Props {
+	title: string;
+	publishDate: string;
+	alt: string;
+}
+
+const { title, author, publishDate, heroImage, alt } = Astro.props;
+---
+
+<div class="layout">
+	<article class="prose max-w-max py-8 border-b border-zinc-800 last-of-type:border-b last-of-type:border-b-zinc-600" >
+			<header class="mb-4">
+				<h2 class="text-xl text-sky-200 mb-2 font-light">{title}</h2>
+			</header>
+			<main class="pb-8 text-zinc-300">
+				<slot />
+			</main>
+			<p class="text-xs text-zinc-300 max-w-fit rounded-md py-1 px-2 ring-1 ring-zinc-600">{publishDate}</p>
+	</article>
+</div>
