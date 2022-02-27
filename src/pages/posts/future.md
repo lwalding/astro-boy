@@ -4,7 +4,10 @@ setup: |
 publishDate: 01.01.12
 title: Future
 description: Accusamus sed aut et. Repudiandae autem voluptatibus saepe aut ea. Voluptatum tempora voluptates dolores et autem laborum. Laudantium sequi temporibus ab et nulla laboriosam sit. Optio quam autem ea eos quia velit.
+
 ---
+
+<img src="/src/assets/img/nails.jpeg">
 
 Neque voluptas dolor velit. Totam sint sint explicabo. Rem rem ut placeat.
 
